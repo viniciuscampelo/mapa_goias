@@ -1,0 +1,1590 @@
+<!--
+
+ * Mapas dinamicos (mapa estado de goias Brasil)
+ * Map of goias
+ * 
+ * @author Vinicius Campelo
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<title>Mapa Goias</title>
+
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js" charset="utf-8"></script>
+		<script src="raphael.min.js" charset="utf-8"></script>
+		<script src="jquery.mapael.min.js" charset="utf-8"></script>
+        <script type="text/javascript" src="goias.js" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="goias.css">
+		
+<script type="text/javascript">
+			$(function () {
+
+	$(".mapcontainer").mapael({
+		map: {
+			// Set the name of the map to display
+			name: "goias",
+			touch: true,
+			zoom: {
+				enabled: true
+			},
+			defaultArea: {
+				attrs: {
+					stroke: "#fff",
+					"stroke-width": 1
+				},
+				attrsHover: {
+					"stroke-width": 2
+				}
+			}
+		},
+		legend: {
+			area: {
+				title: "PIB por Microrregião do Estado de Goias",
+				slices: [{
+						min: 10000,
+						max: 30000,
+						attrs: {
+							fill: "#87CEFA"
+						},
+						label: "Entre 10.000 a 30.000 mil"
+					},
+					{
+						min: 30000,
+						max: 50000,
+						attrs: {
+							fill: "#00BFFF"
+						},
+						label: "Entre 30.000 a 50.000 mil"
+					},
+					{
+						min: 50000,
+						max: 70000,
+						attrs: {
+							fill: "#1E90FF"
+						},
+						label: "Entre 50.000 a 70.000 mil"
+					},
+					{
+						min: 70000,
+						max: 100000,
+						attrs: {
+							fill: "#4169E1"
+						},
+						label: "Entre 70.000 a 100.000 mil"
+					},
+					{
+						min: 100000,
+						max: 500000,
+						attrs: {
+							fill: "#0000CD"
+						},
+						label: "Entre 100.000 a 500.000 mil"
+					},
+{
+						min: 500000,
+						max: 900000,
+						attrs: {
+							fill: "#191970"
+						},
+						label: "Entre 500.000 a 900.000 mil"
+					},
+					{
+						min: 900000,
+						attrs: {
+							fill: "#00008B"
+						},
+						label: "Acima de 900.000 mil"
+					}
+				]
+			}
+		},
+		areas: {
+			"path696": {
+				tooltip: {
+					content: "Município:ANHANGUERA, Microrregião: CATALAO"
+},
+				value: 10036
+			}, 
+			"path296": {
+				tooltip: {
+					content: "Município:JESUPOLIS, Microrregião: ANAPOLIS"
+},
+				value: 15896
+			},
+			"path44": {
+				tooltip: {
+					content: "Município:TERESINA DE GOIAS, Microrregião: CHAPADA DOS VEADEIROS"
+},
+				value: 16111
+			},
+			"path591": {
+				tooltip: {
+					content: "Município:PALMELO, Microrregião: PIRES DO RIO"
+},
+				value: 16849
+			},
+			"path128": {
+				tooltip: {
+					content: "Município:BURITINOPOLIS, Microrregião: VAO DO PARANA"
+},
+				value: 17142
+			},
+			"path473": {
+				tooltip: {
+					content: "Município:CACHOEIRA DE GOIAS, Microrregião: IPORA"
+},
+				value: 18477
+			},
+			"path627": {
+				tooltip: {
+					content: "Município:ALOANDIA, Microrregião: MEIA PONTE"
+},
+				value: 18580
+			},
+			"path137": {
+				tooltip: {
+					content: "Município:DAMIANOPOLIS, Microrregião: VAO DO PARANA"
+},
+				value: 18879
+			},
+			"path224": {
+				tooltip: {
+					content: "Município:SAO PATRICIO, Microrregião: CERES"
+},
+				value: 19565
+			},
+			"path185": {
+				tooltip: {
+					content: "Município:NOVA AMERICA, Microrregião: CERES"
+},
+				value: 20345
+			},
+			"path263": {
+				tooltip: {
+					content: "Município:GUARAITA, Microrregião: CERES"
+},
+				value: 20367
+			},
+			"path221": {
+				tooltip: {
+					content: "Município:MORRO AGUDO DE GOIAS, Microrregião: CERES"
+},
+				value: 20462
+			},
+			"path416": {
+				tooltip: {
+					content: "Município:MOIPORA, Microrregião: IPORA"
+},
+				value: 20759
+			},
+			"path140": {
+				tooltip: {
+					content: "Município:GUARINOS, Microrregião: CERES"
+},
+				value: 20957
+			},
+			"path654": {
+				tooltip: {
+					content: "Município:NOVA AURORA, Microrregião: CATALAO"
+},
+				value: 23116
+			},
+			"path404": {
+				tooltip: {
+					content: "Município:ADELANDIA, Microrregião: ANICUNS"
+},
+				value: 23657
+			},
+			"path113": {
+				tooltip: {
+					content: "Município:NOVA IGUACU DE GOIAS, Microrregião: PORANGATU"
+},
+				value: 23906
+			},
+			"path143": {
+				tooltip: {
+					content: "Município:SITIO D'ABADIA, Microrregião: VAO DO PARANA"
+},
+				value: 24158
+			},
+			"path648": {
+				tooltip: {
+					content: "Município:MARZAGAO, Microrregião: MEIA PONTE"
+},
+				value: 24410
+			},
+			"path371": {
+				tooltip: {
+					content: "Município:DAMOLANDIA, Microrregião: ANAPOLIS"
+},
+				value: 24574
+			},
+			"path500": {
+				tooltip: {
+					content: "Município:SAO JOAO DA PARAUNA, Microrregião: VALE DO RIO DOS BOIS"
+},
+				value: 24759
+			},
+			"path62": {
+				tooltip: {
+					content: "Município:COLINAS DO SUL, Microrregião: CHAPADA DOS VEADEIROS"
+},
+				value: 24794
+			},
+			"path32": {
+				tooltip: {
+					content: "Município:TROMBAS, Microrregião: PORANGATU"
+},
+				value: 25050
+			},
+			"path377": {
+				tooltip: {
+					content: "Município:ISRAELANDIA, Microrregião: IPORA"
+},
+				value: 25363
+			},
+			"path311": {
+				tooltip: {
+					content: "Município:SANTA ROSA DE GOIAS, Microrregião: ANAPOLIS"
+},
+				value: 25505
+			},
+			"path344": {
+				tooltip: {
+					content: "Município:BURITI DE GOIAS, Microrregião: ANICUNS"
+},
+				value: 25525
+			},
+			"path705": {
+				tooltip: {
+					content: "Município:TRES RANCHOS, Microrregião: CATALAO"
+},
+				value: 26324
+			},
+			"path326": {
+				tooltip: {
+					content: "Município:JAUPACI, Microrregião: IPORA"
+},
+				value: 26360
+			},
+			"path651": {
+				tooltip: {
+					content: "Município:AGUA LIMPA, Microrregião: MEIA PONTE"
+},
+				value: 27161
+			},
+			"path122": {
+				tooltip: {
+					content: "Município:PILAR DE GOIAS, Microrregião: CERES"
+},
+				value: 27385
+			},
+			"path558": {
+				tooltip: {
+					content: "Município:PROFESSOR JAMIL, Microrregião: MEIA PONTE"
+},
+				value: 27996
+			},
+			"path341": {
+				tooltip: {
+					content: "Município:DIORAMA, Microrregião: ARAGARCAS"
+},
+				value: 28153
+			},
+			"path657": {
+				tooltip: {
+					content: "Município:DAVINOPOLIS, Microrregião: CATALAO"
+},
+				value: 28842
+			},
+			"path173": {
+				tooltip: {
+					content: "Município:MIMOSO DE GOIAS, Microrregião: ENTORNO DE BRASILIA"
+},
+				value: 28981
+			},
+			"path71": {
+				tooltip: {
+					content: "Município:ESTRELA DO NORTE, Microrregião: PORANGATU"
+},
+				value: 29091
+			},
+			"path89": {
+				tooltip: {
+					content: "Município:UIRAPURU, Microrregião: SAO MIGUEL DO ARAGUAIA"
+},
+				value: 29812
+			},
+			"path347": {
+				tooltip: {
+					content: "Município:BALIZA, Microrregião: ARAGARCAS"
+},
+				value: 30264
+			},
+			"path570": {
+				tooltip: {
+					content: "Município:MAIRIPOTABA, Microrregião: MEIA PONTE"
+},
+				value: 30856
+			},
+			"path59": {
+				tooltip: {
+					content: "Município:CAMPINACU, Microrregião: PORANGATU"
+},
+				value: 31282
+			},
+			"path104": {
+				tooltip: {
+					content: "Município:CAMPOS VERDES, Microrregião: PORANGATU"
+},
+				value: 31727
+			},
+			"path125": {
+				tooltip: {
+					content: "Município:MAMBAI, Microrregião: VAO DO PARANA"
+},
+				value: 32983
+			},
+			"path38": {
+				tooltip: {
+					content: "Município:SANTA TEREZA DE GOIAS, Microrregião: PORANGATU"
+},
+				value: 33371
+			},
+			"path543": {
+				tooltip: {
+					content: "Município:VARJAO, Microrregião: VALE DO RIO DOS BOIS"
+},
+				value: 33471
+			},
+			"path68": {
+				tooltip: {
+					content: "Município:AMARALINA, Microrregião: PORANGATU"
+},
+				value: 33488
+			},
+			"path564": {
+				tooltip: {
+					content: "Município:CRISTIANOPOLIS, Microrregião: PIRES DO RIO"
+},
+				value: 33622
+			},
+			"path8": {
+				tooltip: {
+					content: "Município:MONTIVIDIU DO NORTE, Microrregião: PORANGATU"
+},
+				value: 33665
+			},
+			"path434": {
+				tooltip: {
+					content: "Município:IVOLANDIA, Microrregião: IPORA"
+},
+				value: 33808
+			},
+			"path56": {
+				tooltip: {
+					content: "Município:MUTUNOPOLIS, Microrregião: PORANGATU"
+},
+				value: 34249
+			},
+			"path308": {
+				tooltip: {
+					content: "Município:TAQUARAL DE GOIAS, Microrregião: ANAPOLIS"
+},
+				value: 34277
+			},
+			"path374": {
+				tooltip: {
+					content: "Município:CORREGO DO OURO, Microrregião: IPORA"
+},
+				value: 34711
+			},
+			"path386": {
+				tooltip: {
+					content: "Município:ARACU, Microrregião: ANAPOLIS"
+},
+				value: 34722
+			},
+			"path50": {
+				tooltip: {
+					content: "Município:FORMOSO, Microrregião: PORANGATU"
+},
+				value: 34815
+			},
+			"path14": {
+				tooltip: {
+					content: "Município:NOVO PLANALTO, Microrregião: SAO MIGUEL DO ARAGUAIA"
+},
+				value: 34860
+			},
+			"path74": {
+				tooltip: {
+					content: "Município:GUARANI DE GOIAS, Microrregião: VAO DO PARANA"
+},
+				value: 35706
+			},
+			"path20": {
+				tooltip: {
+					content: "Município:DIVINOPOLIS DE GOIAS, Microrregião: VAO DO PARANA"
+},
+				value: 36690
+			},
+			"path269": {
+				tooltip: {
+					content: "Município:HEITORAI, Microrregião: ANAPOLIS"
+},
+				value: 37036
+			},
+			"path155": {
+				tooltip: {
+					content: "Município:HIDROLINA, Microrregião: CERES"
+},
+				value: 37266
+			},
+			"path488": {
+				tooltip: {
+					content: "Município:CAMPESTRE DE GOIAS, Microrregião: VALE DO RIO DOS BOIS"
+},
+				value: 37333
+			},
+			"path681": {
+				tooltip: {
+					content: "Município:APARECIDA DO RIO DOCE, Microrregião: SUDOESTE DE GOIAS"
+},
+				value: 38363
+			},
+			"path401": {
+				tooltip: {
+					content: "Município:BRAZABRANTES, Microrregião: ANAPOLIS"
+},
+				value: 38480
+			},
+			"path458": {
+				tooltip: {
+					content: "Município:AURILANDIA, Microrregião: ANICUNS"
+},
+				value: 38484
+			},
+			"path134": {
+				tooltip: {
+					content: "Município:SIMOLANDIA, Microrregião: VAO DO PARANA"
+},
+				value: 38790
+			},
+			"path293": {
+				tooltip: {
+					content: "Município:NOVO BRASIL, Microrregião: IPORA"
+},
+				value: 39174
+			},
+			"path413": {
+				tooltip: {
+					content: "Município:AVELINOPOLIS, Microrregião: ANICUNS"
+},
+				value: 39654
+			},
+			"path455": {
+				tooltip: {
+					content: "Município:AMORINOPOLIS, Microrregião: IPORA"
+},
+				value: 39692
+			},
+			"path47": {
+				tooltip: {
+					content: "Município:NOVA ROMA, Microrregião: CHAPADA DOS VEADEIROS"
+},
+				value: 39908
+			},
+			"path485": {
+				tooltip: {
+					content: "Município:CALDAZINHA, Microrregião: GOIANIA"
+},
+				value: 40102
+			},
+			"path41": {
+				tooltip: {
+					content: "Município:BONOPOLIS, Microrregião: PORANGATU"
+},
+				value: 40568
+			},
+			"path149": {
+				tooltip: {
+					content: "Município:SANTA RITA DO NOVO DESTINO, Microrregião: CERES"
+},
+				value: 40921
+			},
+			"path323": {
+				tooltip: {
+					content: "Município:ARENOPOLIS, Microrregião: ARAGARCAS"
+},
+				value: 40983
+			},
+			"path290": {
+				tooltip: {
+					content: "Município:ITAGUARI, Microrregião: ANAPOLIS"
+},
+				value: 41844
+			},
+			"path419": {
+				tooltip: {
+					content: "Município:CATURAI, Microrregião: ANAPOLIS"
+},
+				value: 41969
+			},
+			"path449": {
+				tooltip: {
+					content: "Município:PALESTINA DE GOIAS, Microrregião: SUDOESTE DE GOIAS"
+},
+				value: 42114
+			},
+			"path567": {
+				tooltip: {
+					content: "Município:CROMINIA, Microrregião: MEIA PONTE"
+},
+				value: 43084
+			},
+			"path422": {
+				tooltip: {
+					content: "Município:SANTO ANTONIO DE GOIAS, Microrregião: GOIANIA"
+},
+				value: 43278
+			},
+			"path597": {
+				tooltip: {
+					content: "Município:URUTAI, Microrregião: PIRES DO RIO"
+},
+				value: 43297
+			},
+			"path678": {
+				tooltip: {
+					content: "Município:PANAMA, Microrregião: MEIA PONTE"
+},
+				value: 44310
+			},
+			"path191": {
+				tooltip: {
+					content: "Município:SANTA ISABEL, Microrregião: CERES"
+},
+				value: 44490
+			},
+			"path365": {
+				tooltip: {
+					content: "Município:OURO VERDE DE GOIAS, Microrregião: ANAPOLIS"
+},
+				value: 44679
+			},
+			"path494": {
+				tooltip: {
+					content: "Município:PALMINOPOLIS, Microrregião: VALE DO RIO DOS BOIS"
+},
+				value: 44897
+			},
+			"path693": {
+				tooltip: {
+					content: "Município:CUMARI, Microrregião: CATALAO"
+},
+				value: 47195
+			},
+			"path287": {
+				tooltip: {
+					content: "Município:SAO FRANCISCO DE GOIAS, Microrregião: ANAPOLIS"
+},
+				value: 47206
+			},
+			"path522": {
+				tooltip: {
+					content: "Município:ARAGOIANIA, Microrregião: GOIANIA"
+},
+				value: 48642
+			},
+			"path470": {
+				tooltip: {
+					content: "Município:BONFINOPOLIS, Microrregião: GOIANIA"
+},
+				value: 50525
+			},
+			"path17": {
+				tooltip: {
+					content: "Município:MONTE ALEGRE DE GOIAS, Microrregião: CHAPADA DOS VEADEIROS"
+},
+				value: 50868
+			},
+			"path503": {
+				tooltip: {
+					content: "Município:ABADIA DE GOIAS, Microrregião: GOIANIA"
+},
+				value: 51766
+			},
+			"path528": {
+				tooltip: {
+					content: "Município:SAO MIGUEL DO PASSA QUATRO, Microrregião: PIRES DO RIO"
+},
+				value: 52719
+			},
+			"path467": {
+				tooltip: {
+					content: "Município:SANTA BARBARA DE GOIAS, Microrregião: ANICUNS"
+},
+				value: 53491
+			},
+			"path83": {
+				tooltip: {
+					content: "Município:ALTO PARAISO DE GOIAS, Microrregião: CHAPADA DOS VEADEIROS"
+},
+				value: 53832
+			},
+			"path633": {
+				tooltip: {
+					content: "Município:RIO QUENTE, Microrregião: MEIA PONTE"
+},
+				value: 55958
+			},
+			"path203": {
+				tooltip: {
+					content: "Município:MATRINCHA, Microrregião: RIO VERMELHO"
+},
+				value: 57494
+			},
+			"path182": {
+				tooltip: {
+					content: "Município:BRITANIA, Microrregião: RIO VERMELHO"
+},
+				value: 57607
+			},
+			"path410": {
+				tooltip: {
+					content: "Município:TEREZOPOLIS DE GOIAS, Microrregião: GOIANIA"
+},
+				value: 57985
+			},
+			"path170": {
+				tooltip: {
+					content: "Município:SAO LUIZ DO NORTE, Microrregião: CERES"
+},
+				value: 58652
+			},
+			"path320": {
+				tooltip: {
+					content: "Município:MOSSAMEDES, Microrregião: ANICUNS"
+},
+				value: 58745
+			},
+			"path672": {
+				tooltip: {
+					content: "Município:CASTELANDIA, Microrregião: SUDOESTE DE GOIAS"
+},
+				value: 59860
+			},
+			"path666": {
+				tooltip: {
+					content: "Município:GOIANDIRA, Microrregião: CATALAO"
+},
+				value: 60260
+			},
+			"path188": {
+				tooltip: {
+					content: "Município:NOVA GLORIA, Microrregião: CERES"
+},
+				value: 60553
+			},
+			"path525": {
+				tooltip: {
+					content: "Município:SANTA RITA DO ARAGUAIA, Microrregião: SUDOESTE DE GOIAS"
+},
+				value: 61890
+			},
+			"path131": {
+				tooltip: {
+					content: "Município:ALVORADA DO NORTE, Microrregião: VAO DO PARANA"
+},
+				value: 64527
+			},
+			"path726": {
+				tooltip: {
+					content: "Município:ITAJA, Microrregião: QUIRINOPOLIS"
+},
+				value: 65623
+			},
+			"path585": {
+				tooltip: {
+					content: "Município:SANTA CRUZ DE GOIAS, Microrregião: PIRES DO RIO"
+},
+				value: 66048
+			},
+			"path440": {
+				tooltip: {
+					content: "Município:TURVANIA, Microrregião: ANICUNS"
+},
+				value: 66111
+			},
+			"path53": {
+				tooltip: {
+					content: "Município:MUNDO NOVO, Microrregião: SAO MIGUEL DO ARAGUAIA"
+},
+				value: 66113
+			},
+			"path266": {
+				tooltip: {
+					content: "Município:ITAGUARU, Microrregião: ANAPOLIS"
+},
+				value: 66601
+			},
+			"path305": {
+				tooltip: {
+					content: "Município:FAZENDA NOVA, Microrregião: IPORA"
+},
+				value: 66905
+			},
+			"path579": {
+				tooltip: {
+					content: "Município:EDEALINA, Microrregião: VALE DO RIO DOS BOIS"
+},
+				value: 67434
+			},
+			"path428": {
+				tooltip: {
+					content: "Município:GOIANAPOLIS, Microrregião: GOIANIA"
+},
+				value: 67572
+			},
+			"path353": {
+				tooltip: {
+					content: "Município:ITAUCU, Microrregião: ANAPOLIS"
+},
+				value: 68622
+			},
+			"path218": {
+				tooltip: {
+					content: "Município:FAINA, Microrregião: RIO VERMELHO"
+},
+				value: 69383
+			},
+			"path179": {
+				tooltip: {
+					content: "Município:ARAGUAPAZ, Microrregião: RIO VERMELHO"
+},
+				value: 71140
+			},
+			"path380": {
+				tooltip: {
+					content: "Município:AMERICANO DO BRASIL, Microrregião: ANICUNS"
+},
+				value: 71599
+			},
+			"path95": {
+				tooltip: {
+					content: "Município:SANTA TEREZINHA DE GOIAS, Microrregião: PORANGATU"
+},
+				value: 72407
+			},
+			"path606": {
+				tooltip: {
+					content: "Município:SANTO ANTONIO DA BARRA, Microrregião: SUDOESTE DE GOIAS"
+},
+				value: 72817
+			},
+			"path164": {
+				tooltip: {
+					content: "Município:VILA BOA, Microrregião: ENTORNO DE BRASILIA"
+},
+				value: 73043
+			},
+			"path275": {
+				tooltip: {
+					content: "Município:CORUMBA DE GOIAS, Microrregião: ENTORNO DE BRASILIA"
+},
+				value: 73857
+			},
+			"path437": {
+				tooltip: {
+					content: "Município:FIRMINOPOLIS, Microrregião: ANICUNS"
+},
+				value: 76076
+			},
+			"path242": {
+				tooltip: {
+					content: "Município:RIANAPOLIS, Microrregião: CERES"
+},
+				value: 77565
+			},
+			"path720": {
+				tooltip: {
+					content: "Município:APORE, Microrregião: SUDOESTE DE GOIAS"
+},
+				value: 77905
+			},
+			"path711": {
+				tooltip: {
+					content: "Município:INACIOLANDIA, Microrregião: MEIA PONTE"
+},
+				value: 81881
+			},
+			"path299": {
+				tooltip: {
+					content: "Município:BOM JARDIM DE GOIAS, Microrregião: ARAGARCAS"
+},
+				value: 82629
+			},
+			"path630": {
+				tooltip: {
+					content: "Município:JOVIANIA, Microrregião: MEIA PONTE"
+},
+				value: 84545
+			},
+			"path392": {
+				tooltip: {
+					content: "Município:NOVA VENEZA, Microrregião: ANAPOLIS"
+},
+				value: 85803
+			},
+			"path116": {
+				tooltip: {
+					content: "Município:ARUANA, Microrregião: RIO VERMELHO"
+},
+				value: 86020
+			},
+			"path77": {
+				tooltip: {
+					content: "Município:IACIARA, Microrregião: VAO DO PARANA"
+},
+				value: 86693
+			},
+			"path23": {
+				tooltip: {
+					content: "Município:SAO DOMINGOS, Microrregião: VAO DO PARANA"
+},
+				value: 86883
+			},
+			"path317": {
+				tooltip: {
+					content: "Município:PETROLINA DE GOIAS, Microrregião: ANAPOLIS"
+},
+				value: 88265
+			},
+			"path362": {
+				tooltip: {
+					content: "Município:SANCLERLANDIA, Microrregião: ANICUNS"
+},
+				value: 92196
+			},
+			"path708": {
+				tooltip: {
+					content: "Município:GOUVELANDIA, Microrregião: QUIRINOPOLIS"
+},
+				value: 92731
+			},
+			"path723": {
+				tooltip: {
+					content: "Município:PARANAIGUARA, Microrregião: QUIRINOPOLIS"
+},
+				value: 93373
+			},
+			"path65": {
+				tooltip: {
+					content: "Município:CAMPINORTE, Microrregião: PORANGATU"
+},
+				value: 97358
+			},
+			"path80": {
+				tooltip: {
+					content: "Município:MARA ROSA, Microrregião: PORANGATU"
+},
+				value: 98342
+			},
+			"path519": {
+				tooltip: {
+					content: "Município:GUAPO, Microrregião: GOIANIA"
+},
+				value: 98474
+			},
+			"path660": {
+				tooltip: {
+					content: "Município:MAURILANDIA, Microrregião: SUDOESTE DE GOIAS"
+},
+				value: 99218
+			},
+			"path245": {
+				tooltip: {
+					content: "Município:ITAPIRAPUA, Microrregião: RIO VERMELHO"
+},
+				value: 100246
+			},
+			"path110": {
+				tooltip: {
+					content: "Município:FLORES DE GOIAS, Microrregião: VAO DO PARANA"
+},
+				value: 100698
+			},
+			"path425": {
+				tooltip: {
+					content: "Município:LEOPOLDO DE BULHOES, Microrregião: GOIANIA"
+},
+				value: 101296
+			},
+			"path281": {
+				tooltip: {
+					content: "Município:ARAGARCAS, Microrregião: ARAGARCAS"
+},
+				value: 102341
+			},
+			"path176": {
+				tooltip: {
+					content: "Município:VILA PROPICIO, Microrregião: ENTORNO DE BRASILIA"
+},
+				value: 108116
+			},
+			"path314": {
+				tooltip: {
+					content: "Município:ABADIANIA, Microrregião: ENTORNO DE BRASILIA"
+},
+				value: 109756
+			},
+			"path582": {
+				tooltip: {
+					content: "Município:PORTELANDIA, Microrregião: SUDOESTE DE GOIAS"
+},
+				value: 111919
+			},
+			"path461": {
+				tooltip: {
+					content: "Município:DOVERLANDIA, Microrregião: SUDOESTE DE GOIAS"
+},
+				value: 114210
+			},
+			"path621": {
+				tooltip: {
+					content: "Município:VICENTINOPOLIS, Microrregião: MEIA PONTE"
+},
+				value: 114265
+			},
+			"path717": {
+				tooltip: {
+					content: "Município:ITARUMA, Microrregião: QUIRINOPOLIS"
+},
+				value: 114576
+			},
+			"path101": {
+				tooltip: {
+					content: "Município:SAO JOAO D'ALIANCA, Microrregião: CHAPADA DOS VEADEIROS"
+},
+				value: 117358
+			},
+			"path464": {
+				tooltip: {
+					content: "Município:NAZARIO, Microrregião: ANICUNS"
+},
+				value: 119887
+			},
+			"path161": {
+				tooltip: {
+					content: "Município:BARRO ALTO, Microrregião: CERES"
+},
+				value: 124271
+			},
+			"path11": {
+				tooltip: {
+					content: "Município:CAMPOS BELOS, Microrregião: CHAPADA DOS VEADEIROS"
+},
+				value: 124694
+			},
+			"path251": {
+				tooltip: {
+					content: "Município:MONTES CLAROS DE GOIAS, Microrregião: ARAGARCAS"
+},
+				value: 126227
+			},
+			"path233": {
+				tooltip: {
+					content: "Município:COCALZINHO DE GOIAS, Microrregião: ENTORNO DE BRASILIA"
+},
+				value: 127132
+			},
+			"path158": {
+				tooltip: {
+					content: "Município:AGUA FRIA DE GOIAS, Microrregião: ENTORNO DE BRASILIA"
+},
+				value: 130834
+			},
+			"path257": {
+				tooltip: {
+					content: "Município:CABECEIRAS, Microrregião: ENTORNO DE BRASILIA"
+},
+				value: 131769
+			},
+			"path239": {
+				tooltip: {
+					content: "Município:SANTA FE DE GOIAS, Microrregião: RIO VERMELHO"
+},
+				value: 131884
+			},
+			"path350": {
+				tooltip: {
+					content: "Município:PIRANHAS, Microrregião: ARAGARCAS"
+},
+				value: 132481
+			},
+			"path534": {
+				tooltip: {
+					content: "Município:JANDAIA, Microrregião: VALE DO RIO DOS BOIS"
+},
+				value: 134635
+			},
+			"path702": {
+				tooltip: {
+					content: "Município:CACHOEIRA ALTA, Microrregião: QUIRINOPOLIS"
+},
+				value: 137402
+			},
+			"path636": {
+				tooltip: {
+					content: "Município:PORTEIRAO, Microrregião: MEIA PONTE"
+},
+				value: 150088
+			},
+			"path546": {
+				tooltip: {
+					content: "Município:INDIARA, Microrregião: VALE DO RIO DOS BOIS"
+},
+				value: 151154
+			},
+			"path227": {
+				tooltip: {
+					content: "Município:CARMO DO RIO VERDE, Microrregião: CERES"
+},
+				value: 151711
+			},
+			"path167": {
+				tooltip: {
+					content: "Município:ITAPACI, Microrregião: CERES"
+},
+				value: 157141
+			},
+			"path540": {
+				tooltip: {
+					content: "Município:CEZARINA, Microrregião: VALE DO RIO DOS BOIS"
+},
+				value: 161289
+			},
+			"path215": {
+				tooltip: {
+					content: "Município:RIALMA, Microrregião: CERES"
+},
+				value: 169812
+			},
+			"path482": {
+				tooltip: {
+					content: "Município:VIANOPOLIS, Microrregião: PIRES DO RIO"
+},
+				value: 171013
+			},
+			"path254": {
+				tooltip: {
+					content: "Município:PIRENOPOLIS, Microrregião: ENTORNO DE BRASILIA"
+},
+				value: 172292
+			},
+			"path663": {
+				tooltip: {
+					content: "Município:BURITI ALEGRE, Microrregião: MEIA PONTE"
+},
+				value: 172654
+			},
+			"path236": {
+				tooltip: {
+					content: "Município:URUANA, Microrregião: CERES"
+},
+				value: 176373
+			},
+			"path600": {
+				tooltip: {
+					content: "Município:PONTALINA, Microrregião: MEIA PONTE"
+},
+				value: 184775
+			},
+			"path209": {
+				tooltip: {
+					content: "Município:RUBIATABA, Microrregião: CERES"
+},
+				value: 186176
+			},
+			"path212": {
+				tooltip: {
+					content: "Município:PADRE BERNARDO, Microrregião: ENTORNO DE BRASILIA"
+},
+				value: 186986
+			},
+			"path699": {
+				tooltip: {
+					content: "Município:CACU, Microrregião: QUIRINOPOLIS"
+},
+				value: 187191
+			},
+			"path35": {
+				tooltip: {
+					content: "Município:NOVA CRIXAS, Microrregião: SAO MIGUEL DO ARAGUAIA"
+},
+				value: 187392
+			},
+			"path618": {
+				tooltip: {
+					content: "Município:TURVELANDIA, Microrregião: VALE DO RIO DOS BOIS"
+},
+				value: 193626
+			},
+			"path642": {
+				tooltip: {
+					content: "Município:SERRANOPOLIS, Microrregião: SUDOESTE DE GOIAS"
+},
+				value: 195874
+			},
+			"path603": {
+				tooltip: {
+					content: "Município:PEROLANDIA, Microrregião: SUDOESTE DE GOIAS"
+},
+				value: 206860
+			},
+			"path687": {
+				tooltip: {
+					content: "Município:OUVIDOR, Microrregião: CATALAO"
+},
+				value: 207117
+			},
+			"path531": {
+				tooltip: {
+					content: "Município:HIDROLANDIA, Microrregião: GOIANIA"
+},
+				value: 211335
+			},
+			"path98": {
+				tooltip: {
+					content: "Município:POSSE, Microrregião: VAO DO PARANA"
+},
+				value: 217710
+			},
+			"path206": {
+				tooltip: {
+					content: "Município:CERES, Microrregião: CERES"
+},
+				value: 221446
+			},
+			"path573": {
+				tooltip: {
+					content: "Município:CAMPO ALEGRE DE GOIAS, Microrregião: CATALAO"
+},
+				value: 223538
+			},
+			"path197": {
+				tooltip: {
+					content: "Município:JUSSARA, Microrregião: RIO VERMELHO"
+},
+				value: 228360
+			},
+			"path230": {
+				tooltip: {
+					content: "Município:ITAPURANGA, Microrregião: CERES"
+},
+				value: 228632
+			},
+			"path119": {
+				tooltip: {
+					content: "Município:CRIXAS, Microrregião: SAO MIGUEL DO ARAGUAIA"
+},
+				value: 229310
+			},
+			"path506": {
+				tooltip: {
+					content: "Município:ORIZONA, Microrregião: PIRES DO RIO"
+},
+				value: 237262
+			},
+			"path260": {
+				tooltip: {
+					content: "Município:GOIAS, Microrregião: RIO VERMELHO"
+},
+				value: 243159
+			},
+			"path431": {
+				tooltip: {
+					content: "Município:GOIANIRA, Microrregião: GOIANIA"
+},
+				value: 253841
+			},
+			"path2": {
+				tooltip: {
+					content: "Município:SAO MIGUEL DO ARAGUAIA, Microrregião: SAO MIGUEL DO ARAGUAIA"
+},
+				value: 254224
+			},
+			"path389": {
+				tooltip: {
+					content: "Município:IPORA, Microrregião: IPORA"
+},
+				value: 257998
+			},
+			"path332": {
+				tooltip: {
+					content: "Município:CIDADE OCIDENTAL, Microrregião: ENTORNO DE BRASILIA"
+},
+				value: 268359
+			},
+			"path576": {
+				tooltip: {
+					content: "Município:ACREUNA, Microrregião: VALE DO RIO DOS BOIS"
+},
+				value: 269558
+			},
+			"path383": {
+				tooltip: {
+					content: "Município:ANICUNS, Microrregião: ANICUNS"
+},
+				value: 277450
+			},
+			"path491": {
+				tooltip: {
+					content: "Município:PARAUNA, Microrregião: VALE DO RIO DOS BOIS"
+},
+				value: 279722
+			},
+			"path284": {
+				tooltip: {
+					content: "Município:SANTO ANTONIO DO DESCOBERTO, Microrregião: ENTORNO DE BRASILIA"
+},
+				value: 280857
+			},
+			"path669": {
+				tooltip: {
+					content: "Município:BOM JESUS DE GOIAS, Microrregião: MEIA PONTE"
+},
+				value: 291006
+			},
+			"path645": {
+				tooltip: {
+					content: "Município:CORUMBAIBA, Microrregião: CATALAO"
+},
+				value: 292535
+			},
+			"path152": {
+				tooltip: {
+					content: "Município:MOZARLANDIA, Microrregião: SAO MIGUEL DO ARAGUAIA"
+},
+				value: 292856
+			},
+			"path395": {
+				tooltip: {
+					content: "Município:SILVANIA, Microrregião: PIRES DO RIO"
+},
+				value: 302568
+			},
+			"path446": {
+				tooltip: {
+					content: "Município:CAIAPONIA, Microrregião: SUDOESTE DE GOIAS"
+},
+				value: 302571
+			},
+			"path588": {
+				tooltip: {
+					content: "Município:EDEIA, Microrregião: VALE DO RIO DOS BOIS"
+},
+				value: 304937
+			},
+			"path26": {
+				tooltip: {
+					content: "Município:CAVALCANTE, Microrregião: CHAPADA DOS VEADEIROS"
+},
+				value: 306231
+			},
+			"path302": {
+				tooltip: {
+					content: "Município:ALEXANIA, Microrregião: ENTORNO DE BRASILIA"
+},
+				value: 327834
+			},
+			"path549": {
+				tooltip: {
+					content: "Município:MONTIVIDIU, Microrregião: SUDOESTE DE GOIAS"
+},
+				value: 335480
+			},
+			"path248": {
+				tooltip: {
+					content: "Município:JARAGUA, Microrregião: ANAPOLIS"
+},
+				value: 347089
+			},
+			"path407": {
+				tooltip: {
+					content: "Município:NEROPOLIS, Microrregião: GOIANIA"
+},
+				value: 359978
+			},
+			"path497": {
+				tooltip: {
+					content: "Município:BELA VISTA DE GOIAS, Microrregião: GOIANIA"
+},
+				value: 363774
+			},
+			"path398": {
+				tooltip: {
+					content: "Município:SAO LUIS DE MONTES BELOS, Microrregião: ANICUNS"
+},
+				value: 379554
+			},
+			"path555": {
+				tooltip: {
+					content: "Município:PIRACANJUBA, Microrregião: MEIA PONTE"
+},
+				value: 384217
+			},
+			"path5": {
+				tooltip: {
+					content: "Município:PORANGATU, Microrregião: PORANGATU"
+},
+				value: 387205
+			},
+			"path552": {
+				tooltip: {
+					content: "Município:PIRES DO RIO, Microrregião: PIRES DO RIO"
+},
+				value: 389730
+			},
+			"path714": {
+				tooltip: {
+					content: "Município:CACHOEIRA DOURADA, Microrregião: MEIA PONTE"
+},
+				value: 415081
+			},
+			"path86": {
+				tooltip: {
+					content: "Município:URUACU, Microrregião: PORANGATU"
+},
+				value: 423797
+			},
+			"path338": {
+				tooltip: {
+					content: "Município:NOVO GAMA, Microrregião: ENTORNO DE BRASILIA"
+},
+				value: 432301
+			},
+			"path200": {
+				tooltip: {
+					content: "Município:PLANALTINA, Microrregião: ENTORNO DE BRASILIA"
+},
+				value: 440330
+			},
+			"path368": {
+				tooltip: {
+					content: "Município:INHUMAS, Microrregião: ANAPOLIS"
+},
+				value: 492679
+			},
+			"path476": {
+				tooltip: {
+					content: "Município:PALMEIRAS DE GOIAS, Microrregião: VALE DO RIO DOS BOIS"
+},
+				value: 496032
+			},
+			"path624": {
+				tooltip: {
+					content: "Município:SANTA HELENA DE GOIAS, Microrregião: SUDOESTE DE GOIAS"
+},
+				value: 537857
+			},
+			"path278": {
+				tooltip: {
+					content: "Município:ITABERAI, Microrregião: ANAPOLIS"
+},
+				value: 592912
+			},
+			"path194": {
+				tooltip: {
+					content: "Município:GOIANESIA, Microrregião: CERES"
+},
+				value: 666362
+			},
+			"path272": {
+				tooltip: {
+					content: "Município:AGUAS LINDAS DE GOIAS, Microrregião: ENTORNO DE BRASILIA"
+},
+				value: 676643
+			},
+			"path675": {
+				tooltip: {
+					content: "Município:CHAPADAO DO CEU, Microrregião: SUDOESTE DE GOIAS"
+},
+				value: 682160
+			},
+			"path615": {
+				tooltip: {
+					content: "Município:MORRINHOS, Microrregião: MEIA PONTE"
+},
+				value: 683115
+			},
+			"path639": {
+				tooltip: {
+					content: "Município:GOIATUBA, Microrregião: MEIA PONTE"
+},
+				value: 685025
+			},
+			"path537": {
+				tooltip: {
+					content: "Município:IPAMERI, Microrregião: CATALAO"
+},
+				value: 699553
+			},
+			"path92": {
+				tooltip: {
+					content: "Município:NIQUELANDIA, Microrregião: PORANGATU"
+},
+				value: 743257
+			},
+			"path107": {
+				tooltip: {
+					content: "Município:ALTO HORIZONTE, Microrregião: PORANGATU"
+},
+				value: 754293
+			},
+			"path690": {
+				tooltip: {
+					content: "Município:QUIRINOPOLIS, Microrregião: QUIRINOPOLIS"
+},
+				value: 772315
+			},
+			"path335": {
+				tooltip: {
+					content: "Município:VALPARAISO DE GOIAS, Microrregião: ENTORNO DE BRASILIA"
+},
+				value: 844612
+			},
+			"path612": {
+				tooltip: {
+					content: "Município:CALDAS NOVAS, Microrregião: MEIA PONTE"
+},
+				value: 856443
+			},
+			"path452": {
+				tooltip: {
+					content: "Município:TRINDADE, Microrregião: GOIANIA"
+},
+				value: 881431
+			},
+			"path29": {
+				tooltip: {
+					content: "Município:MINACU, Microrregião: PORANGATU"
+},
+				value: 897332
+			},
+			"path146": {
+				tooltip: {
+					content: "Município:FORMOSA, Microrregião: ENTORNO DE BRASILIA"
+},
+				value: 911428
+			},
+			"path512": {
+				tooltip: {
+					content: "Município:MINEIROS, Microrregião: SUDOESTE DE GOIAS"
+},
+				value: 1059047
+			},
+			"path514": {
+				tooltip: {
+					content: "Município:MINEIROS, Microrregião: SUDOESTE DE GOIAS"
+},
+				value: 1059047
+			},
+			"path516": {
+				tooltip: {
+					content: "Município:MINEIROS, Microrregião: SUDOESTE DE GOIAS"
+},
+				value: 1059047
+			},
+
+			"path329": {
+				tooltip: {
+					content: "Município:CRISTALINA, Microrregião: ENTORNO DE BRASILIA"
+},
+				value: 1121098
+			},
+			"path729": {
+				tooltip: {
+					content: "Município:SAO SIMAO, Microrregião: QUIRINOPOLIS"
+},
+				value: 1382123
+			},
+			"path356": {
+				tooltip: {
+					content: "Município:LUZIANIA, Microrregião: ENTORNO DE BRASILIA"
+},
+				value: 2077842
+			},
+			"path594": {
+				tooltip: {
+					content: "Município:JATAI, Microrregião: SUDOESTE DE GOIAS"
+},
+				value: 2142103
+			},
+			"path684": {
+				tooltip: {
+					content: "Município:ITUMBIARA, Microrregião: MEIA PONTE"
+},
+				value: 2259728
+			},
+			"path479": {
+				tooltip: {
+					content: "Município:SENADOR CANEDO, Microrregião: GOIANIA"
+},
+				value: 3188615
+			},
+			"path609": {
+				tooltip: {
+					content: "Município:CATALAO, Microrregião: CATALAO"
+},
+				value: 3970852
+			},
+			"path561": {
+				tooltip: {
+					content: "Município:RIO VERDE, Microrregião: SUDOESTE DE GOIAS"
+},
+				value: 4160501
+			},
+			"path509": {
+				tooltip: {
+					content: "Município:APARECIDA DE GOIANIA, Microrregião: GOIANIA"
+},
+				value: 5148640
+			},
+			"path359": {
+				tooltip: {
+					content: "Município:ANAPOLIS, Microrregião: ANAPOLIS"
+},
+				value: 10059557
+			},
+			"path443": {
+				tooltip: {
+					content: "Município:GOIANIA, Microrregião: GOIANIA"
+},
+				value: 24445744
+			}
+		}
+
+	});
+});
+</script>
+</head>
+
+<body>
+
+        <div class="mapcontainer">
+		
+		<h1>Estado de Goias</h1>
+		
+            <div class="map">
+                <span>Alternative content for the map</span>
+            </div>
+            <div class="areaLegend"></div>
+            <div class="plotLegend"></div>
+        </div>
+</body>
+</html>
+
+      
